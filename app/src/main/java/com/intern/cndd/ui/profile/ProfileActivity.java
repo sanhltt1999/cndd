@@ -1,4 +1,4 @@
-package com.intern.cndd.ui;
+package com.intern.cndd.ui.profile;
 
 import androidx.appcompat.app.AppCompatActivity;
 

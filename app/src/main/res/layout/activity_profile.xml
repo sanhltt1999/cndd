@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.ProfileActivity">
+    tools:context=".ui.profile.ProfileActivity">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/productImageView"
@@ -13,7 +13,7 @@
         android:layout_alignParentEnd="true"
         android:layout_gravity="center_horizontal"
         android:layout_height="272dp"
-        android:background="@drawable/PierrePerson"
+        android:background="@drawable/pierreperson"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.SelectedCornerRadius2"
         tools:ignore="ObsoleteLayoutParam"
         android:layout_margin="42dp"
