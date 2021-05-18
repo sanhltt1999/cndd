@@ -21,13 +21,13 @@
         android:layout_marginBottom="12dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="32dp"
-        android:background="@drawable/pierreperson"
+        android:background="@drawable/ic_baseline_person_24"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.SelectedCornerRadius"
         tools:ignore="ObsoleteLayoutParam"
         android:layout_alignParentRight="true" />
 
     <TextView
-        android:id="@+id/title1"
+        android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
@@ -45,7 +45,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginLeft="32dp"
         android:textSize="17sp"
-        android:layout_below="@id/title1"/>
+        android:layout_below="@id/titleTextView"/>
 
     <EditText
         android:id="@+id/searchEditText"
