@@ -71,12 +71,7 @@ public class SignUpFragment extends Fragment {
         mSignUpButton = view.findViewById(R.id.signUpButton);
         loadingBar = new ProgressDialog(getActivity());
 
-        mSignUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createAccount();
-            }
-        });
+        mSignUpButton.setOnClickListener(v -> createAccount());
     }
 
     private void createAccount() {
@@ -117,6 +112,7 @@ public class SignUpFragment extends Fragment {
                     user.put("password", pass);
                     user.put("name", "");
                     user.put("address", "");
+                    user.put("picture", "");
 
                     rootRef.child("Users").child(phone).updateChildren(user)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
