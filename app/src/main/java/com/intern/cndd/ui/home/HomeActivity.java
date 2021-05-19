@@ -30,6 +30,9 @@ import com.google.firebase.database.ValueEventListener;
 import com.intern.cndd.R;
 import com.intern.cndd.model.Products;
 import com.intern.cndd.prevalent.Prevalent;
+import com.intern.cndd.ui.cart.CartActivity;
+import com.intern.cndd.ui.detail.DetailActivity;
+import com.intern.cndd.ui.profile.ProfileActivity;
 import com.intern.cndd.viewholder.ProductsViewHolder;
 
 import java.text.SimpleDateFormat;
@@ -39,6 +42,8 @@ import java.util.HashMap;
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
+
+    public static final String PRODUCT_KEY = "product";
 
     private ShapeableImageView mAvatarImageView;
     private TextView mTitleTextView;
@@ -110,6 +115,22 @@ public class HomeActivity extends AppCompatActivity {
                 mItemDesignImageView.setBackgroundResource(R.drawable.gradient_bg_type_home_no_select);
                 mItemDecorationImageView.setBackgroundResource(R.drawable.gradient_bg_select);
             }
+        });
+
+        mProductsAdapter.setOnListener((products, position) -> {
+            Intent intent = new Intent(HomeActivity.this, DetailActivity.class);
+            intent.putExtra(PRODUCT_KEY, products);
+            startActivity(intent);
+        });
+
+        mProfileImageView.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+            startActivity(intent);
+        });
+
+        mCartImageView.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+            startActivity(intent);
         });
 
     }

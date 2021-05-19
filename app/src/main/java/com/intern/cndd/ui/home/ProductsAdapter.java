@@ -21,6 +21,11 @@ public class ProductsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private Context mContext;
     private List<Products> mProducts;
+    private OnListener mOnListener;
+
+    public void setOnListener(OnListener onListener) {
+        mOnListener = onListener;
+    }
 
     public ProductsAdapter(Context context, List<Products> products) {
         mContext = context;
@@ -68,9 +73,14 @@ public class ProductsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
             nameTextView.setText(products.getName());
             starTextView.setText(products.getStar());
+
+            itemView.setOnClickListener(v -> mOnListener.onClick(products, position));
         }
 
     }
 
+    public interface OnListener {
+        void onClick(Products products, int position);
+    }
 
 }
