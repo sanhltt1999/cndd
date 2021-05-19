@@ -85,6 +85,7 @@
         android:layout_alignParentRight="true" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productsRecyclerView"
         android:layout_below="@+id/itemDecorationImageView"
         android:layout_width="match_parent"
         android:layout_marginTop="16dp"
@@ -116,7 +117,7 @@
 
 
         <ImageView
-            android:id="@+id/cameraImageView"
+            android:id="@+id/cartImageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -128,7 +129,7 @@
             android:src="@drawable/ic_baseline_add_shopping_cart_24" />
 
         <ImageView
-            android:id="@+id/galleryImageView"
+            android:id="@+id/shipImageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -140,7 +141,7 @@
             android:src="@drawable/ic_baseline_local_shipping_24" />
 
         <ImageView
-            android:id="@+id/shareImageView"
+            android:id="@+id/profileImageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
