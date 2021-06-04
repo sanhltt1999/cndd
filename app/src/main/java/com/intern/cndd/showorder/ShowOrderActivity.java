@@ -21,6 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.intern.cndd.R;
 import com.intern.cndd.model.Orders;
 import com.intern.cndd.model.Products;
+import com.intern.cndd.ui.detailorder.DetailOrderActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -81,7 +82,7 @@ public class ShowOrderActivity extends AppCompatActivity {
 
             @Override
             public void onShow(Orders products, int position) {
-                Intent intent = new Intent(ShowOrderActivity.this, ShowOrderActivity.class);
+                Intent intent = new Intent(ShowOrderActivity.this, DetailOrderActivity.class);
                 intent.putExtra("uid", products.getId());
                 startActivity(intent);
             }
@@ -97,7 +98,9 @@ public class ShowOrderActivity extends AppCompatActivity {
                 mOrders.clear();
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {
                     Orders orders = postSnapshot.getValue(Orders.class);
-                    mOrders.add(orders);
+                    if (!orders.getState().equals("Shipped")){
+                        mOrders.add(orders);
+                    }
                 }
                 mOrderAdapter.setOrdersList(mOrders);
                 mOrderAdapter.notifyDataSetChanged();

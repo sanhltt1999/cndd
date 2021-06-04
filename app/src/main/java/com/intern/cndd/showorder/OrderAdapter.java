@@ -83,7 +83,7 @@ public class OrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             ShowOrdersBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mOnListener.onClick(model, position);
+                    mOnListener.onShow(model, position);
                 }
             });
 
